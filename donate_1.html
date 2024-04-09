@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KITE CHARITY FOUNDATION - Donor Details</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      /* Custom CSS for styling */
+      body {
+        background: linear-gradient(to bottom right, #3498db, #9b59b6, #e67e22);
+
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .content-container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 10px;
+        width: 80%; /* Decreased container width */
+        max-width: 800px; /* Added max-width for responsiveness */
+      }
+
+      .form-group {
+        margin-bottom: 20px; /* Increased space between form fields */
+      }
+
+      /* Aligned form to the sides */
+      @media (min-width: 768px) {
+        .content-container {
+          margin: 0 auto;
+        }
+      }
+
+      .btn-active {
+        background-color: #28a745 !important;
+      }
+      .btn-primary {
+        background-color: #f08d0b;
+        border-color: #3498db;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content-container">
+      <!-- Title and Description -->
+      <div class="text-center mb-4">
+        <h6>Enter Your Details</h6>
+        <p style="font-size: small">
+          Please provide your details below to complete the donation process.
+        </p>
+      </div>
+
+      <!-- Donor Details Form -->
+      <form>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="fas fa-user"></i
+                ></span>
+              </div>
+              <input type="text" class="form-control" placeholder="Full Name" />
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="fas fa-envelope"></i
+                ></span>
+              </div>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Email Address"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="fas fa-map-marker-alt"></i
+                ></span>
+              </div>
+              <textarea
+                class="form-control"
+                rows="3"
+                placeholder="Address"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"
+                  ><i class="fas fa-phone"></i
+                ></span>
+              </div>
+              <input type="tel" class="form-control" placeholder="Phone" />
+            </div>
+          </div>
+        </div>
+        <!-- Navigation Link -->
+        <div class="text-center mt-4">
+          <a href="donate_2.html" class="btn btn-primary">Donate</a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Bootstrap JS (optional, only if you want to use form validation) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

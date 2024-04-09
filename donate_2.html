@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KITE CHARITY FOUNDATION - Payment</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      /* Custom CSS for styling */
+      body {
+        background: linear-gradient(to bottom right, #3498db, #9b59b6, #e67e22);
+
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .content-container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 10px;
+        width: 92%; /* Decreased container width */
+        max-width: 900px; /* Added max-width for responsiveness */
+        display: flex;
+        justify-content: space-between; /* Aligning sections to the sides */
+      }
+
+      .payment-methods {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .payment-methods button {
+        margin-bottom: 10px;
+      }
+
+      .payment-methods button i {
+        margin-right: 10px;
+      }
+
+      .payment-section {
+        width: 55%; /* Adjusted width for payment sections */
+      }
+
+      .payment-section form {
+        margin-top: 20px;
+      }
+
+      .btn-active {
+        background-color: #28a745 !important;
+      }
+      .btn-primary {
+        background-color: #f08d0b;
+        border-color: #3498db;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content-container">
+      <!-- Payment Method Toggle Buttons -->
+      <div class="payment-methods">
+        <button class="btn btn-primary active" id="mobileBtn">
+          <i class="fas fa-mobile-alt"></i> Mobile Payment
+        </button>
+        <button class="btn btn-primary" id="cardBtn">
+          <i class="fas fa-credit-card"></i> Card Payment
+        </button>
+      </div>
+
+      <!-- Mobile Payment Section -->
+      <div class="payment-section" id="mobilePaymentSection">
+        <div class="text-center mb-4">
+          <h6>Proceed to Mobile Payment</h6>
+          <p style="font-size: smaller">Click the button below.</p>
+        </div>
+        <div class="text-center mt-4">
+          <a href="#" class="btn btn-primary">Proceed</a>
+        </div>
+      </div>
+
+      <!-- Card Payment Section -->
+      <div
+        class="payment-section"
+        id="cardPaymentSection"
+        style="display: none"
+      >
+        <form>
+          <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cardNumber"
+              placeholder="Enter card number"
+            />
+          </div>
+          <div class="form-group">
+            <label for="expiryDate">Expiry Date</label>
+            <input
+              type="text"
+              class="form-control"
+              id="expiryDate"
+              placeholder="MM/YYYY"
+            />
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cvv"
+              placeholder="Enter CVV"
+            />
+          </div>
+          <div class="text-center mt-4">
+            <a href="#" class="btn btn-primary">Proceed to Payment</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS (optional, only if you want to use form validation) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // JavaScript to toggle between mobile and card payment sections
+      $("#mobileBtn").click(function () {
+        $("#mobilePaymentSection").show();
+        $("#cardPaymentSection").hide();
+        $("#mobileBtn").addClass("active");
+        $("#cardBtn").removeClass("active");
+      });
+
+      $("#cardBtn").click(function () {
+        $("#mobilePaymentSection").hide();
+        $("#cardPaymentSection").show();
+        $("#mobileBtn").removeClass("active");
+        $("#cardBtn").addClass("active");
+      });
+    </script>
+  </body>
+</html>
