@@ -7315,7 +7315,10 @@ h1, h2, h3, h4, h5,
       top: 0;
       position: relative; } }
   .ftco-navbar-light .navbar-brand {
-    color: #fff; }
+    color: #fff;
+    font-size: small;
+  
+  }
     @media (min-width: 768px) {
       .ftco-navbar-light .navbar-brand {
         color: #fff; } }
