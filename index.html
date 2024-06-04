@@ -475,12 +475,14 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-6 col-lg-5">
-            <form action="#" class="subscribe-form">
+            <form action="subscriber.php" method="POST" class="subscribe-form">
               <div class="form-group d-flex">
                 <input
                   type="email"
+                  name="email"
                   class="form-control"
                   placeholder="Enter your email address"
+                  required
                 />
                 <input
                   type="submit"
