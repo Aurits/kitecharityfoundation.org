@@ -28,7 +28,7 @@ $mail->setFrom($email, $name);
 $mail->addAddress("ateraxantonio@gmail.com", "Alanda Ambrose");
 
 $mail->Subject = $subject;
-$mail->Body = $message;
+$mail->Body = $message . " Email: " . $email;
 
 $mail->send();
 
