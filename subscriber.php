@@ -1,4 +1,8 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $subject = "Subscription Confirmation";
@@ -6,8 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     require "vendor/autoload.php";
 
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
+
 
     $mail = new PHPMailer(true);
 
@@ -49,4 +52,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     header("Location: index.html");
 }
-?>
