@@ -17,15 +17,15 @@ $mail = new PHPMailer(true);
 $mail->isSMTP();
 $mail->SMTPAuth = true;
 
-$mail->Host = "smtp.hostinger.com";
+$mail->Host = "";
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-$mail->Port = 465;
+$mail->Port = ;
 
-$mail->Username = "kitecharityfoundation@outlook.com";
-$mail->Password = "ghbbffftww546$";
+$mail->Username = "";
+$mail->Password = "";
 
 $mail->setFrom($email, $name);
-$mail->addAddress("kitecharityfoundation@outlook.com", "KITE CHARITY FOUNDATION");
+$mail->addAddress("", "");
 
 $mail->Subject = $subject;
 $mail->Body = $message . " Email: " . $email;
