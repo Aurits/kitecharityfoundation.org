@@ -4,45 +4,56 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Retrieve form data
-$name = $_POST["name"];
-$email = $_POST["email"];
-$subject = $_POST["subject"];
-$message = $_POST["message"];
-
-// Include PHPMailer library
-require "vendor/autoload.php";
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-$mail = new PHPMailer(true);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
+    $subject = "Subscription Confirmation";
+    $message = "Thank you for subscribing to our newsletter!";
 
-try {
-    // SMTP server configuration
-    $mail->isSMTP();
-    $mail->SMTPAuth = true;
-    $mail->Host = "smtp.gmail.com";
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
+    require "vendor/autoload.php";
 
-    // SMTP account credentials
-    $mail->Username = "kitecharityfoundation@gmail.com";
-    $mail->Password = "mmuz rfvc ceuj qqdr";
 
-    // Email settings for the contact form
-    $mail->setFrom($email, $name);
-    $mail->addAddress("kitecharityfoundation@gmail.com", "KITE");
-    $mail->addCC("info@kitecharityfoundation.org");
 
-    $mail->Subject = $subject;
-    $mail->Body = $message . " Email: " . $email;
+    $mail = new PHPMailer(true);
 
-    // Send the email
-    $mail->send();
+    try {
+        // SMTP server configuration
+        $mail->isSMTP();
+        $mail->SMTPAuth = true;
+        $mail->Host = "smtp.gmail.com";
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
-    // Redirect to the confirmation page
-    header("Location: sent.html");
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        // SMTP account credentials
+        $mail->Username = "kitecharityfoundation@gmail.com";
+        $mail->Password = "mmuz rfvc ceuj qqdr";
+
+        // Email to subscriber
+        $mail->setFrom("kitecharityfoundation@gmail.com", "KITE Charity Foundation");
+        $mail->addAddress($email);
+        $mail->Subject = "Subscription Confirmation";
+        $mail->Body = "Dear Subscriber,\n\nThank you for subscribing to our newsletter! We will keep you updated with our latest news and events.\n\nBest regards,\nKITE Charity Foundation";
+
+        // Send email to subscriber
+        $mail->send();
+
+        // Email to main recipient and admin about the new subscription
+        $mail->clearAddresses();
+        $mail->addAddress("kitecharityfoundation@gmail.com", "KITE");
+        $mail->addCC("info@kitecharityfoundation.org");
+        $mail->Subject = "New Newsletter Subscription";
+        $mail->Body = "A new user has subscribed to the newsletter. Email: " . $email;
+
+        // Send email to main recipient and admin
+        $mail->send();
+
+        // Redirect to the confirmation page
+        header("Location: sent.html");
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+} else {
+    header("Location: index.html");
 }
