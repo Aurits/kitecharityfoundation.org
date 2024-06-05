@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->send();
 
         // Redirect to the confirmation page
-        header("Location: sent.html");
+        header("Location: sent_sub.html");
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
