@@ -27,11 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port = 587;
 
         // SMTP account credentials
-        $mail->Username = "ateraxantonio@gmail.com";
-        $mail->Password = "sayw rhsb tysy hkjs";
+        $mail->Username = "kitecharityfoundation@gmail.com";
+        $mail->Password = "mmuz rfvc ceuj qqdr";
 
         // Email settings for subscriber
-        $mail->setFrom("ateraxantonio@gmail.com", "ADMIN");
+        $mail->setFrom("kitecharityfoundation@gmail.com", "KITE ADMIN");
         $mail->addAddress($email);
 
         $mail->Subject = $subject;
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Email settings for admin notification
         $mail->clearAddresses();
-        $mail->addAddress("ateraxantonio@gmail.com", "Admin Name");
+        $mail->addAddress("kitecharityfoundation@gmail.com", "KITE");
         $mail->Subject = "New Newsletter Subscription";
         $mail->Body = "A new user has subscribed to the newsletter. Email: " . $email;
 
