@@ -1,8 +1,7 @@
 <?php
-// Enable error reporting
+// Enable error reporting for debugging purposes
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -31,8 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Password = "mmuz rfvc ceuj qqdr";
 
         // Email settings for subscriber
-        $mail->setFrom("kitecharityfoundation@gmail.com", "KITE ADMIN");
+        $mail->setFrom("kitecharityfoundation@gmail.com", "KITE Charity Foundation");
         $mail->addAddress($email);
+        $mail->addCC("info@kitecharityfoundation.org");
 
         $mail->Subject = $subject;
         $mail->Body = $message . " Email: " . $email;
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Email settings for admin notification
         $mail->clearAddresses();
-        $mail->addAddress("kitecharityfoundation@gmail.com", "KITE");
+        $mail->addAddress("info@kitecharityfoundation.org", "KITE Admin");
         $mail->Subject = "New Newsletter Subscription";
         $mail->Body = "A new user has subscribed to the newsletter. Email: " . $email;
 
