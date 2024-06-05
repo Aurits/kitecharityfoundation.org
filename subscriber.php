@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->addAddress("kitecharityfoundation@gmail.com", "KITE");
         $mail->addCC("info@kitecharityfoundation.org");
         $mail->Subject = "New Newsletter Subscription";
-        $mail->Body = "A new user has subscribed to the newsletter. Email: " . $email;
+        $mail->Body = "A new user has subscribed to the newsletter.\n\nSubscriber Email: " . $email . "\n\nBest regards,\nKITE Charity Foundation";
 
         // Send email to main recipient and admin
         $mail->send();
