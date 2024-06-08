@@ -14,8 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     require "vendor/autoload.php";
 
-
-
     $mail = new PHPMailer(true);
 
     try {
@@ -30,11 +28,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Username = "kitecharityfoundation@gmail.com";
         $mail->Password = "mmuz rfvc ceuj qqdr";
 
+        // Unsubscribe link (for demo purposes, email is used directly)
+        $unsubscribeLink = "https://yourdomain.com/unsubscribe.php?email=" . urlencode($email);
+
         // Email to subscriber
         $mail->setFrom("kitecharityfoundation@gmail.com", "KITE Charity Foundation");
         $mail->addAddress($email);
         $mail->Subject = "Subscription Confirmation";
-        $mail->Body = "Dear Subscriber,\n\nThank you for subscribing to our newsletter! We will keep you updated with our latest news and events.\n\nBest regards,\nKITE Charity Foundation";
+        $mail->Body = "Dear Subscriber,\n\nThank you for subscribing to our newsletter! We will keep you updated with our latest news and events.\n\nIf you wish to unsubscribe at any time, please click the following link:\n\n" . $unsubscribeLink . "\n\nBest regards,\nKITE Charity Foundation";
 
         // Send email to subscriber
         $mail->send();
