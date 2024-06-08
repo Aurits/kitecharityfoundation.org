@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Password = "mmuz rfvc ceuj qqdr";
 
         // Unsubscribe link (for demo purposes, email is used directly)
-        $unsubscribeLink = "https://yourdomain.com/unsubscribe.php?email=" . urlencode($email);
+        $unsubscribeLink = "https://kitecharityfoundation.org/unsubscribe.php?email=" . urlencode($email);
 
         // Email to subscriber
         $mail->setFrom("kitecharityfoundation@gmail.com", "KITE Charity Foundation");
