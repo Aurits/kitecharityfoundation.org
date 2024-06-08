@@ -18,7 +18,7 @@ text-align: center;
 <p>We’re sorry to see you go! You have been successfully unsubscribed from our newsletter.</p>
 <p>If this was a mistake or you change your mind, you can always resubscribe on our <a href='https://kitecharityfoundation.org' style='color: #007bff; text-decoration: none;'>website</a>.</p>
 <p>Thank you for your past engagement with our updates.</p>
-<p style='margin-top: 20px; font-size: 14px; color: #777;'>If you have any questions or need further assistance, please <a href='https://kitecharityfoundation.org/contact' style='color: #007bff; text-decoration: none;'>contact us</a>.</p>
+<p style='margin-top: 20px; font-size: 14px; color: #777;'>If you have any questions or need further assistance, please <a href='https://kitecharityfoundation.org/contact.html' style='color: #007bff; text-decoration: none;'>contact us</a>.</p>
 </div>";
 
 // // Enable error reporting for debugging purposes
